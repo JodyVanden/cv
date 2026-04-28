@@ -1,57 +1,52 @@
 ## Work Experience
-`FEB.2022-PRESENT`
-__CashApp__ - Software Engineer
 
-- I18N for CashApp to launch in multiple languages
-- Compliance work for different Regions for regulatory reasons
+  `JUN 2024 - DEC 2025`
+  __Fresho__ - Software Engineer
 
-`SEPT.2021-FEB.2022`
-__Money By Afterpay__ - Software Engineer
+  - __Venues Pro__: Launched a paid supplier-management product for restaurants, including email-to-order ingestion using the OpenAI API.
+  - Delivered core product/order/invoice workflows, migrated to Xero's official integration, and implemented invoice confirmation for connected Xero accounts.
+  - __Renovate__: Introduced and centralized automated dependency updates across repositories to reduce technical debt.
 
-- Building Money by Afterpay
-- Building Open Banking with attention to accessibility access
+  `FEB 2022 - JUNE 2024`
+  __Cash App__ - Software Engineer
 
-`JUL.2020-AUG.2021`
-__Afterpay__ - Software Engineer
+  - Delivered i18n initiatives supporting launches across multiple languages and regions.
+  - Implemented region-specific compliance updates to meet regulatory requirements.
 
-- merchant settlement
-- Transactions have to be settle with merchants Afterpay's customers
-- Successfuly launched Afterpay Card - virtual card - in Australia, New Zealand and USA
+  `SEP 2021 - FEB 2022`
+  __Money by Afterpay__ - Software Engineer
 
-`JAN.2019-JUN.2020`
-__Culture Amp__ - Software Engineer
+  - Shipped new features and maintained the Money by Afterpay app, including core banking flows (accounts, payments, and transactions).
+  - Built Open Banking features for Money by Afterpay with a strong accessibility focus.
 
-- Completed Junior Engineering Program with Ryan Bigg
-- Continuous delivery across front-end — React/typescript — and back-end — Ruby on Rails
-- code, test-driven development — RSpec, Jest, Cucumber — , git
-- deployment, bug monitoring — Bugsnag, Sentry, New Relic — on a platform with 160,000 + active users.
+  `JUL 2020 - AUG 2021`
+  __Afterpay__ - Software Engineer
 
+  - Built and improved merchant settlement systems, including end-to-end transaction settlement flows.
+  - Contributed to the launch of the Afterpay Card (virtual card) across Australia, New Zealand, and the United States.
 
-`MARS.2018-NOV.2017`
-__Mplus Software__ - Project Manager
+  `JAN 2019 - JUN 2020`
+  __Culture Amp__ - Software Engineer
 
-- Managing Developer for software.
-- Define the requirements of the clients in functional briefs
-- Manage the process with the developersManaging Developer for software. Define the requirements of the clients in functional briefs Manage the process with the developers
+  - Delivered features across front-end (React/TypeScript) and back-end (Ruby on Rails) using continuous delivery and test-driven development (RSpec, Jest, Cucumber).
+  - Improved production reliability with Bugsnag, Sentry, and New Relic on a platform serving 160,000+ active users.
 
-`MARS.2018-NOV.2017`
-__Hackathon__ - Winner of GUD | StartupVIC Automotive Technology Hackathon | TrueCOW
+  `MAR 2018 - NOV 2018`
+  __Mplus Software__ - Project Manager
 
-- TrueCOW is an API algorithm that provides the true cost of owning wheels
+  - Coordinated an Indonesia-based development team and New Caledonia clients, turning business needs into implementation-ready briefs for a bus-stop cleaning operations platform.
 
+  `MAY 2018`
+  __Hackathon__ - Winner, GUD | StartupVIC Automotive Technology Hackathon (__TrueCOW__)
 
-`MAY.2018`
-__Hackathon__ - Winner of GUD | StartupVIC Automotive Technology Hackathon | TrueCOW
+  - Built TrueCOW, an API-based algorithm estimating the true cost of vehicle ownership.
 
-- TrueCOW is an API algorithm that provides the true cost of owning wheels
+  `2011 - 2013`
+  __Parrot__ - Mechanical Design Engineer (Drone UAV)
 
+  - Managed end-to-end product lifecycle for consumer drones and accessory cameras, including supplier coordination for mass production in China.
 
-`2011 - 2013`
-__Parrot__ - Mechanical Design Engineer for Drone UAV
+  `2011 - 2013`
+  __AIRBUS Cimpa__ - Junior Project Manager
 
-- Full production life cycle for consumer drones and accessory cameras from early design phase through to manufacturing with multiple travels to China to manage suppliers and find solutions for mass production.
-
-`2011 - 2013`
-__AIRBUS Cimpa__ - Junior Project Manager
-
-- Managing the carve-out project of a former Airbus entity, Diehl Aircabin by planning and executing the migration of 800 employees from the Airbus internal system to an Airbus supplier system
+  - Led migration planning and execution for 800 employees during the Diehl Aircabin carve-out from Airbus systems.

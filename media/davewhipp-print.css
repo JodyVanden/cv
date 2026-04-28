@@ -131,6 +131,7 @@ h1+p {
 	/*subtitle*/
 	font-style: italic;
 	font-size: 110%;
+	margin-top: 0.5em;
 }
 
 h2 {
@@ -155,12 +156,25 @@ h3 {
 }
 
 a {
-	color: inherit;
-	text-decoration:none
+	color: #000;
+	text-decoration: underline;
+	text-underline-offset: 1px;
+	word-break: break-word;
 }
 
 a:hover {
-	color:#39f
+	color:#000
+}
+
+/* Keep link hitboxes visible in PDF generators that are sensitive to clipping */
+p a,
+li a,
+h1 a,
+h2 a,
+h3 a,
+h4 a {
+	display: inline;
+	position: static;
 }
 
 #webaddress {
