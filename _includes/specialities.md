@@ -1,5 +1,5 @@
 ## Specialities
 
-- Experienced product focused Software Engineer with a background of building scalable systems in FinTech, and people platform
-- Expert in Data/Business Driven Development and Platform Software Design
-- Ruby, Rails, Elixir, Kotlin, React
+- Senior Software Engineer with 7+ years shipping regulated financial products at scale — FinTech, neo-banking, and payments infrastructure.
+- Track record of delivering across AU, NZ, and US markets with compliance-first engineering and high-availability platforms.
+- Full-stack ownership across Ruby on Rails, React/TypeScript, Elixir, and Kotlin with deep experience in observability and incident response.
