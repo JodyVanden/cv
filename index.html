@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jody Vandenschrick — CV</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #edeae3;
+            --surface: #ffffff;
+            --navy: #1c3d5a;
+            --navy-mid: #2a5478;
+            --gold: #b8935a;
+            --gold-light: #c9a87a;
+            --text: #1a1a1a;
+            --text-secondary: #3d3d3d;
+            --text-muted: #7a7a7a;
+            --border: #ddd8ce;
+            --sidebar-bg: #f0ede6;
+            --tag-bg: #e3ded4;
+            --tag-text: #3e3a34;
+        }
+
+        html {
+            font-size: 17px;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Page Shell ── */
+        .page {
+            max-width: 1040px;
+            margin: 48px auto;
+            background: var(--surface);
+            box-shadow:
+                    0 8px 80px rgba(0, 0, 0, 0.12),
+                    0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        /* ── Header ── */
+        .header {
+            background: var(--navy);
+            color: white;
+            padding: 56px 60px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            pointer-events: none;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(
+                    90deg,
+                    var(--gold) 0%,
+                    var(--gold-light) 35%,
+                    transparent 75%
+            );
+        }
+
+        .header-eyebrow {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .header-name {
+            font-size: 3.4rem;
+            font-weight: 200;
+            letter-spacing: 0.03em;
+            line-height: 1;
+            margin-bottom: 28px;
+        }
+
+        .header-name strong {
+            font-weight: 700;
+        }
+
+        .header-meta {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 6px;
+            letter-spacing: 0.02em;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 0;
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .contact-row a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .contact-row a:hover {
+            color: white;
+        }
+
+        .contact-sep {
+            margin: 0 14px;
+            color: rgba(255, 255, 255, 0.22);
+        }
+
+        /* ── Body Grid ── */
+        .body {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+        }
+
+        /* ── Sidebar ── */
+        .sidebar {
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border);
+            padding: 48px 34px;
+        }
+
+        /* ── Main ── */
+        .main {
+            padding: 48px 56px;
+        }
+
+        /* ── Section label ── */
+        .section-label {
+            font-size: 0.66rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--navy);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--navy);
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ── Skill groups ── */
+        .skill-group {
+            margin-bottom: 20px;
+        }
+
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-group-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            color: var(--navy-mid);
+            margin-bottom: 7px;
+        }
+
+        .skill-prose {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 7px;
+        }
+
+        .tag {
+            font-family: "SF Mono", "Fira Mono", "Courier New", monospace;
+            font-size: 0.72rem;
+            padding: 3px 9px;
+            border-radius: 3px;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            letter-spacing: 0.02em;
+            line-height: 1.6;
+        }
+
+        /* ── Education ── */
+        .edu-entry {
+            margin-bottom: 18px;
+        }
+
+        .edu-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-year {
+            font-family: "SF Mono", "Fira Mono", "Courier New", monospace;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 0.06em;
+            margin-bottom: 3px;
+        }
+
+        .edu-degree {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.35;
+        }
+
+        .edu-place {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-top: 1px;
+        }
+
+        /* ── Interests ── */
+        .interests-text {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        /* ── Profile summary ── */
+        .summary {
+            margin-bottom: 36px;
+            padding-bottom: 34px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .summary-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .summary-list li {
+            font-size: 0.96rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .summary-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .summary-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .profile-prose {
+            font-size: 0.96rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+        }
+
+        /* ── Job entries ── */
+        .job {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .job:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 4px 16px;
+            margin-bottom: 12px;
+        }
+
+        .job-left {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0 10px;
+        }
+
+        .job-company {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: 0.01em;
+        }
+
+        .job-role {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .job-product {
+            font-weight: 400;
+            color: var(--navy-mid);
+            opacity: 0.75;
+        }
+
+        .job-role::before {
+            content: "·";
+            margin-right: 10px;
+            color: var(--border);
+        }
+
+        .job-date {
+            font-family: "SF Mono", "Fira Mono", "Courier New", monospace;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 0.07em;
+            white-space: nowrap;
+        }
+
+        .job-bullets {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-bullets li {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 7px;
+        }
+
+        .job-bullets li:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-bullets li::before {
+            content: "–";
+            position: absolute;
+            left: 0;
+            color: #c8c0b4;
+        }
+
+        .job-bullets li strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 760px) {
+            .page {
+                margin: 0;
+            }
+            .body {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            .header {
+                padding: 40px 28px 32px;
+            }
+            .main {
+                padding: 32px 24px;
+            }
+            .header-name {
+                font-size: 2.4rem;
+            }
+        }
+
+        /* ── Print ── */
+        @media print {
+            html {
+                font-size: 11pt;
+            }
+            body {
+                background: white;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                max-width: 100%;
+            }
+            .header,
+            .sidebar {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .job {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header class="header">
+        <div class="header-eyebrow">Software Engineer</div>
+        <h1 class="header-name">Jody <strong>Vandenschrick</strong></h1>
+        <div class="header-meta">
+            Melbourne, Australia &nbsp;·&nbsp; Australian Citizen
+        </div>
+        <div class="contact-row">
+            <a href="mailto:jody.vanden@gmail.com">jody.vanden@gmail.com</a>
+            <span class="contact-sep">|</span>
+            <a href="https://github.com/jodyvanden">github.com/jodyvanden</a>
+            <span class="contact-sep">|</span>
+            <a href="https://www.linkedin.com/in/jodyvandenschrick"
+            >linkedin.com/in/jodyvandenschrick</a
+            >
+        </div>
+    </header>
+
+    <div class="body">
+        <!-- ── Sidebar ── -->
+        <aside class="sidebar">
+            <div class="section">
+                <div class="section-label">Skills</div>
+
+                <div class="skill-group">
+                    <div class="skill-group-label">System Design</div>
+                    <div class="skill-prose">
+                        Distributed systems, event-driven systems, API design, domain
+                        modeling, high-availability architecture
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-label">Delivery</div>
+                    <div class="skill-prose">
+                        CI/CD, iterative delivery, compliance-aware engineering, TDD/BDD
+                    </div>
+                    <div class="tags">
+                        <span class="tag">RSpec</span>
+                        <span class="tag">Jest</span>
+                        <span class="tag">Cucumber</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-label">Languages &amp; Frameworks</div>
+                    <div class="tags">
+                        <span class="tag">Ruby on Rails</span>
+                        <span class="tag">React</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Elixir</span>
+                        <span class="tag">Kotlin</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Java</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-label">Observability</div>
+                    <div class="tags">
+                        <span class="tag">Datadog</span>
+                        <span class="tag">Sentry</span>
+                        <span class="tag">New Relic</span>
+                        <span class="tag">Bugsnag</span>
+                        <span class="tag">Mixpanel</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-label">Data &amp; Events</div>
+                    <div class="tags">
+                        <span class="tag">Kafka</span>
+                        <span class="tag">Kinesis</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-label">Cloud &amp; Platform</div>
+                    <div class="tags">
+                        <span class="tag">AWS</span>
+                        <span class="tag">EC2</span>
+                        <span class="tag">Lambda</span>
+                        <span class="tag">SQS</span>
+                        <span class="tag">S3</span>
+                        <span class="tag">Terraform</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Heroku</span>
+                        <span class="tag">Buildkite</span>
+                        <span class="tag">GitHub Actions</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-label">Education</div>
+
+                <div class="edu-entry">
+                    <div class="edu-year">2017</div>
+                    <div class="edu-degree">Fullstack Developer Bootcamp</div>
+                    <div class="edu-place">Le Wagon — France</div>
+                </div>
+
+                <div class="edu-entry">
+                    <div class="edu-year">2007 – 2011</div>
+                    <div class="edu-degree">Mechanical Engineering</div>
+                    <div class="edu-place">
+                        University of Technology of Troyes — France
+                    </div>
+                </div>
+
+                <div class="edu-entry">
+                    <div class="edu-year">2010</div>
+                    <div class="edu-degree">Mechanical Engineering (Exchange)</div>
+                    <div class="edu-place">Hong Kong Polytechnic University</div>
+                </div>
+
+                <div class="edu-entry">
+                    <div class="edu-year">2008 – 2009</div>
+                    <div class="edu-degree">Mechanical Engineering (Exchange)</div>
+                    <div class="edu-place">University of Stuttgart — Germany</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-label">Recognition</div>
+                <div class="edu-entry">
+                    <div class="edu-year">MAY 2018</div>
+                    <div class="edu-degree">1st Place — TrueCOW</div>
+                    <div class="edu-place">
+                        GUD | StartupVIC Automotive Technology Hackathon — API-driven
+                        total-cost-of-ownership algorithm, 20 teams
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-label">Interests</div>
+                <p class="interests-text">
+                    Kitesurfing, photography, travel, building and fixing things
+                </p>
+            </div>
+        </aside>
+
+        <!-- ── Main ── -->
+        <main class="main">
+            <div class="summary">
+                <div class="section-label">Profile</div>
+                <p class="profile-prose">
+                    Senior Software Engineer with 7+ years building products customers
+                    love — across fintech, HR tech, and supply chain. I work best in
+                    cross-functional teams, working closely with product, design, and
+                    compliance to turn complex requirements into reliable, well-tested
+                    systems that ship and scale. I pick up new domains quickly and
+                    bring the same rigorous, customer-first mindset to each. My
+                    background in mechanical engineering and hardware product
+                    management gives me a systems-first perspective that shapes how I
+                    approach software — I think in constraints, interfaces, and
+                    failure modes. I'm energised by what AI makes possible for small
+                    teams: I've shipped OpenAI-powered features in production and I'm
+                    always looking for ways to use AI to build better software,
+                    faster.
+                </p>
+            </div>
+
+            <div class="section">
+                <div class="section-label">Work Experience</div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-left">
+                            <span class="job-company">Fresho</span>
+                            <span class="job-role">Software Engineer</span>
+                        </div>
+                        <span class="job-date">JUN 2024 – DEC 2025</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>
+                            Built and successfully launched a new monetised
+                            supplier-management product (Venues Pro) with AI-powered
+                            (OpenAI) email-to-order ingestion — from zero to live with
+                            full order, invoice, and payment workflows.
+                        </li>
+                        <li>
+                            Improved financial data accuracy for merchants by migrating to
+                            Xero's official accounting integration and shipping invoice
+                            confirmation workflows.
+                        </li>
+                        <li>
+                            Cut manual dependency upgrade work and reduced vulnerability
+                            exposure across all 130 repositories by rolling out automated
+                            dependency updates (Renovate) company-wide.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-left">
+                  <span class="job-company"
+                  >Block <span class="job-product">· Cash App</span></span
+                  >
+                            <span class="job-role">Software Engineer</span>
+                        </div>
+                        <span class="job-date">FEB 2022 – JUN 2024</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>
+                            Led internationalisation of Cash App's product suite —
+                            building tooling to extract and manage translatable strings
+                            across 400+ services, enabling the first non-US market
+                            launches and Spanish-language support for US Latino users.
+                        </li>
+                        <li>
+                            Built KYC and source-of-funds compliance flows for users
+                            flagged by Cash App's ML fraud model, working with the
+                            regulatory team to meet requirements in Canada and Australia
+                            as part of the international expansion programme.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-left">
+                  <span class="job-company"
+                  >Block <span class="job-product">· Afterpay</span></span
+                  >
+                            <span class="job-role">Software Engineer</span>
+                        </div>
+                        <span class="job-date">JUL 2020 – FEB 2022</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>
+                            Delivered Open Banking integrations and core neo-banking
+                            features — account management, payments, and transaction
+                            history — for Money by Afterpay, with accessibility compliance
+                            built in from the start.
+                        </li>
+                        <li>
+                            Strengthened payout reliability and settlement accuracy at
+                            scale, and contributed to the multi-market launch of the
+                            Afterpay Card (virtual card) across Australia, New Zealand,
+                            and the United States.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-left">
+                            <span class="job-company">Culture Amp</span>
+                            <span class="job-role">Software Engineer</span>
+                        </div>
+                        <span class="job-date">JAN 2019 – JUN 2020</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>
+                            Delivered full-stack features on a platform serving 160,000+
+                            active users, working across React/TypeScript and Ruby on
+                            Rails with CI/CD and TDD (RSpec, Jest, Cucumber).
+                        </li>
+                        <li>
+                            Reduced incident noise and shortened mean time to recovery by
+                            driving production observability across Bugsnag, Sentry, and
+                            New Relic on a high-availability SaaS platform.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-left">
+                            <span class="job-company">Mplus Software</span>
+                            <span class="job-role">Project Manager</span>
+                        </div>
+                        <span class="job-date">MAR – NOV 2018</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>
+                            Managed delivery of a field operations app for SMTU (New
+                            Caledonia) — enabling bus stop cleaning requests, GPS-verified
+                            job completion, and photo evidence capture — coordinating
+                            remotely between the client and an Indonesia-based dev team.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-left">
+                            <span class="job-company">Parrot</span>
+                            <span class="job-role"
+                            >Mechanical Design Engineer — Drone UAV</span
+                            >
+                        </div>
+                        <span class="job-date">2011 – 2013</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>
+                            Drove consumer drone and accessory camera products from design
+                            to mass production in China, managing supplier relationships
+                            against cost and schedule targets.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-left">
+                            <span class="job-company">AIRBUS Cimpa</span>
+                            <span class="job-role">Junior Project Manager</span>
+                        </div>
+                        <span class="job-date">2011 – 2013</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>
+                            Led migration planning for 800 employees during the Diehl
+                            Aircabin carve-out from Airbus systems, coordinating across
+                            technical and business teams to keep the transition on track.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>
