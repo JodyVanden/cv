@@ -412,26 +412,110 @@
             }
         }
 
-        /* ── Print ── */
+        /* ── Print / PDF (A4) ── */
         @media print {
-            html {
-                font-size: 11pt;
+            @page {
+                size: A4 portrait;
+                margin: 0;
             }
+
+            html {
+                font-size: 9.5pt;
+            }
+
             body {
                 background: white;
             }
+
             .page {
                 box-shadow: none;
                 margin: 0;
-                max-width: 100%;
+                width: 210mm;
+                max-width: 210mm;
+                min-height: 297mm;
             }
+
+            /* Force background colours to print */
             .header,
             .sidebar {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
+
+            /* Header */
+            .header {
+                padding: 28px 32px 22px;
+            }
+
+            .header-name {
+                font-size: 2rem;
+                margin-bottom: 14px;
+            }
+
+            /* Tighten sidebar & main */
+            .sidebar {
+                padding: 28px 20px;
+            }
+
+            .main {
+                padding: 28px 32px;
+            }
+
+            /* Reduce vertical rhythm */
+            .section {
+                margin-bottom: 22px;
+            }
+
+            .summary {
+                margin-bottom: 20px;
+                padding-bottom: 18px;
+            }
+
+            .job {
+                margin-bottom: 16px;
+                padding-bottom: 16px;
+            }
+
+            .skill-group {
+                margin-bottom: 12px;
+            }
+
+            .edu-entry {
+                margin-bottom: 10px;
+            }
+
+            /* Avoid breaking a job entry across pages */
             .job {
                 page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Keep job header with its bullets */
+            .job-header {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Don't break sidebar sections */
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Don't orphan section labels */
+            .section-label {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Hide decorative circle pseudo-element that can bleed */
+            .header::before {
+                display: none;
+            }
+
+            /* URLs visible in print */
+            .contact-row a::after {
+                content: none; /* don't append URL — it's already visible as text */
             }
         }
     </style>
